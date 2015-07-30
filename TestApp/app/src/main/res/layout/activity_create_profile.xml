@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.testapp.CreateProfileActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Creating a profile"
+        android:textColor="#9A0A0A"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"/>
+
+    <ImageView
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:id="@+id/imageView2"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.28"
+        android:background="#9A0A0A0A"
+        android:layout_below="@+id/textView4"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:gravity="center"
+        android:background="#9A0A0A"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#BDBDBD"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:gravity="center"
+        android:background="#9A0A0A"
+        android:text="Username (optional)"
+        android:textColor="#BDBDBD"
+        android:id="@+id/editText6"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/editText5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="56dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="DONE"
+        android:textColor="#9A0A0A"
+        android:id="@+id/doneCreatingProfile"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
