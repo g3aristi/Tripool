@@ -23,7 +23,7 @@ public class ActivitySignUp extends ActionBarActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), CreateProfileActivity.class);
+                Intent intent = new Intent(view.getContext(), LogInActivity.class);
                 startActivityForResult(intent, 0);
             }
         });
