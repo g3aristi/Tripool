@@ -17,6 +17,7 @@ public class LogInActivity extends ActionBarActivity implements View.OnClickList
     Button bSignin;
     EditText etUsername, etPassword;
     TextView registerLink;
+    UserLocalStorage userLocalStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class LogInActivity extends ActionBarActivity implements View.OnClickList
         etPassword = (EditText) findViewById(R.id.etPassword);
         registerLink = (TextView) findViewById(R.id.registerLink);
 
+        userLocalStorage = new UserLocalStorage(this);
+
         bSignin.setOnClickListener(this);
         registerLink.setOnClickListener(this);
     }
@@ -36,8 +39,14 @@ public class LogInActivity extends ActionBarActivity implements View.OnClickList
     public void onClick(View v){
         switch(v.getId()){
             case R.id.bSignin:
+
+                User user = new User(null, null);
+                userLocalStorage.storeUserData(user);
+
+                userLocalStorage.setUserSignedIn(true);
                 startActivity(new Intent(this, MainActivity.class));
                 break;
+
             case R.id.registerLink:
                 startActivity(new Intent(this, ActivitySignUp.class));
                 break;

@@ -32,6 +32,13 @@ public class ActivitySignUp extends ActionBarActivity implements View.OnClickLis
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.bSignUp:
+
+                String name = etName.getText().toString();
+                String email = etEmail.getText().toString();
+                String password = etPassword.getText().toString();
+
+                User SignedUpData = new User(name, email, password);
+
                 startActivity(new Intent(this, LogInActivity.class));
                 break;
         }

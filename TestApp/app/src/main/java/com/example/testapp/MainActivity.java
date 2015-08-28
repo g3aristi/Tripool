@@ -7,13 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
     ImageButton btnRanGen;
+    EditText etName;
     Button bSignOut, bMyProfile, bMyPools, bHistory;
+    UserLocalStorage userLocalStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         btnRanGen = (ImageButton) findViewById(R.id.imageButtonRanGen);
+        etName = (EditText) findViewById(R.id.etName);
         bSignOut = (Button) findViewById(R.id.bSignOut);
         bMyProfile = (Button) findViewById(R.id.bMyProfile);
         bMyPools = (Button) findViewById(R.id.bMyPools);
@@ -30,6 +34,27 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         bMyPools.setOnClickListener(this);
         bHistory.setOnClickListener(this);
         bSignOut.setOnClickListener(this);
+
+        userLocalStorage = new UserLocalStorage(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (authenticate()){
+            displayUserDetails();
+        }
+
+    }
+
+    private boolean authenticate(){
+        return userLocalStorage.getUserSignedIn();
+    }
+
+    private void displayUserDetails(){
+        User u = userLocalStorage.getSignedInUser();
+
+        etName.setText(u.name);
     }
 
     @Override
@@ -45,6 +70,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 startActivity(new Intent(this, HistoryActivity.class));
                 break;
             case R.id.bSignOut:
+                userLocalStorage.clearUserData();
+                userLocalStorage.setUserSignedIn(false);
+
                 startActivity(new Intent(this, LogInActivity.class));
                 break;
         }

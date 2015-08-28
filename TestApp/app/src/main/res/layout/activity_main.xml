@@ -5,6 +5,15 @@
     android:weightSum="1"
     tools:context="com.example.testapp.MainActivity">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="25dp"
+        android:id="@+id/etName"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +31,7 @@
         android:textColor="#9A0A0A"
         android:id="@+id/textView8"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="35dp"
         android:layout_marginBottom="15dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
