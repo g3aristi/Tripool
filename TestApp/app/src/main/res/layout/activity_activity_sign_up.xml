@@ -25,16 +25,31 @@
         android:layout_height="35sp"
         android:gravity="center"
         android:background="#FFFFFF"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:hint="Name"
+        android:textColorHint="#BDBDBD"
+        android:id="@+id/etName"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:layout_marginTop="56dp"
         android:inputType="textEmailAddress"
         android:ems="10"
         android:hint="Email"
         android:textColorHint="#BDBDBD"
-        android:id="@+id/editText3"
+        android:id="@+id/etEmail"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/etName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -45,12 +60,13 @@
         android:ems="10"
         android:hint="Password"
         android:textColorHint="#BDBDBD"
-        android:id="@+id/editText4"
+        android:id="@+id/etPassword"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/editText3"
+        android:layout_below="@+id/etEmail"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="42dp" />
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,19 +76,19 @@
         android:textStyle="bold"
         android:id="@+id/textView3"
         android:layout_gravity="center_horizontal"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/etPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="NEXT"
+        android:text="sign up"
         android:textColor="#9A0A0A"
-        android:id="@+id/doneSignUp"
+        android:id="@+id/bSignUp"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
+        android:layout_alignLeft="@+id/etEmail"
+        android:layout_alignStart="@+id/etEmail" />
 
 </RelativeLayout>

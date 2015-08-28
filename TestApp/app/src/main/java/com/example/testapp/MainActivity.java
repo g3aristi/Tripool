@@ -10,10 +10,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
     ImageButton btnRanGen;
-    Button btnMyProfile, btnMyPools, btnHistory;
+    Button bSignOut, bMyProfile, bMyPools, bHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,65 +21,32 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         btnRanGen = (ImageButton) findViewById(R.id.imageButtonRanGen);
+        bSignOut = (Button) findViewById(R.id.bSignOut);
+        bMyProfile = (Button) findViewById(R.id.bMyProfile);
+        bMyPools = (Button) findViewById(R.id.bMyPools);
+        bHistory = (Button) findViewById(R.id.bHistory);
 
-        btnRanGen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), TripActivity.class);
-                startActivityForResult(intent, 0);
-            }
-        });
-
-        btnMyProfile = (Button) findViewById(R.id.myProfile);
-
-        btnMyProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ProfileActivity.class);
-                startActivityForResult(intent, 0);
-            }
-        });
-
-        btnMyPools = (Button) findViewById(R.id.myPools);
-
-        btnMyPools.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), MyPoolsActivity.class);
-                startActivityForResult(intent, 0);
-            }
-        });
-
-        btnHistory = (Button) findViewById(R.id.history);
-
-        btnHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), HistoryActivity.class);
-                startActivityForResult(intent, 0);
-            }
-        });
+        bMyProfile.setOnClickListener(this);
+        bMyPools.setOnClickListener(this);
+        bHistory.setOnClickListener(this);
+        bSignOut.setOnClickListener(this);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.bMyProfile:
+                startActivity(new Intent(this, ProfileActivity.class));
+                break;
+            case R.id.bMyPools:
+                startActivity(new Intent(this, MyPoolsActivity.class));
+                break;
+            case R.id.bHistory:
+                startActivity(new Intent(this, HistoryActivity.class));
+                break;
+            case R.id.bSignOut:
+                startActivity(new Intent(this, LogInActivity.class));
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

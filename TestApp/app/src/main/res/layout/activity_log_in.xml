@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log in"
+        android:text="Sign in"
         android:textColor="#FFFFFF"
         android:textSize="40sp"
         android:id="@+id/textView"
@@ -29,7 +29,7 @@
         android:hint="Username"
         android:textColorHint="#BDBDBD"
         android:textAlignment="center"
-        android:id="@+id/editText"
+        android:id="@+id/etUsername"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
@@ -44,7 +44,7 @@
         android:background="#FFFFFF"
         android:hint="password"
         android:textColorHint="#BDBDBD"
-        android:id="@+id/editText2"
+        android:id="@+id/etPassword"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:layout_centerVertical="true"
@@ -59,16 +59,26 @@
         android:textColorLink="#FFFFFF"
         android:textColor="#FFFFFF"
         android:id="@+id/textView2"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/etPassword"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register HERE!!"
+        android:textColor="#FFFFFF"
+        android:id="@+id/registerLink"
+        android:layout_below="@+id/etPassword"
+        android:layout_alignRight="@+id/etPassword"
+        android:layout_alignEnd="@+id/etPassword" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="NEXT"
+        android:text="Sign in"
         android:textColor="#9A0A0A"
-        android:id="@+id/logInNext"
+        android:id="@+id/bSignin"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/editText"

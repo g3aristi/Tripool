@@ -5,6 +5,15 @@
     android:weightSum="1"
     tools:context="com.example.testapp.MainActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign out"
+        android:id="@+id/bSignOut"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,11 +73,11 @@
         android:textSize="30dp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:id="@+id/myProfile"
+        android:id="@+id/bMyProfile"
         android:layout_gravity="center_horizontal"
         android:background="#9A0A0A"
         android:layout_marginBottom="3dp"
-        android:layout_above="@+id/myPools"
+        android:layout_above="@+id/bMyPools"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -81,10 +90,10 @@
         android:textSize="30dp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:id="@+id/myPools"
+        android:id="@+id/bMyPools"
         android:layout_gravity="center_horizontal"
         android:background="#9A0A0A"
-        android:layout_above="@+id/history"
+        android:layout_above="@+id/bHistory"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -97,10 +106,10 @@
         android:textSize="30dp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:id="@+id/history"
+        android:id="@+id/bHistory"
         android:layout_gravity="center_horizontal"
         android:background="#9A0A0A"
-        android:layout_above="@+id/textView12"
+        android:layout_above="@+id/bSettings"
         android:layout_marginTop="3dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -114,7 +123,7 @@
         android:textSize="30dp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:id="@+id/textView12"
+        android:id="@+id/bSettings"
         android:background="#9A0A0A"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
