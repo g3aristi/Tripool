@@ -7,8 +7,6 @@
     $con=mysql_connect("mysql_host", "mysql_user", "mysql_password", "mysql_database");
 
     $name = $_POST["name"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
 
     $stmt = mysqli_prepare($con, "INSER INTO User (name, email, password) VALUES (?, ?, ?)");
     mysqli_stmt_bind_param($stmt, "sss", $name, $email, $password);

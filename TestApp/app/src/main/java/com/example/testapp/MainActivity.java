@@ -43,6 +43,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         super.onStart();
         if (authenticate()){
             displayUserDetails();
+        } else {
+            startActivity(new Intent(MainActivity.this, LogInActivity.class));
         }
 
     }

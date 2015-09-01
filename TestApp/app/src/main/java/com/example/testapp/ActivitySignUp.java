@@ -39,8 +39,18 @@ public class ActivitySignUp extends ActionBarActivity implements View.OnClickLis
 
                 User SignedUpData = new User(name, email, password);
 
-                startActivity(new Intent(this, LogInActivity.class));
+                registerUser(SignedUpData);
                 break;
         }
+    }
+
+    private void registerUser(User registerUser){
+        ServerRequest sr = new ServerRequest(this);
+        sr.storeUserDataBackground(registerUser, new GetUserCallback() {
+            @Override
+            public void done(User returnedUser) {
+                startActivity(new Intent(ActivitySignUp.this, LogInActivity.class));
+            }
+        });
     }
 }
